@@ -11,5 +11,6 @@ namespace food_express.DBEntities
         public string ImageFileName { get; set; }
 
         public DishCategories Category { get; set; }
+        public ICollection<OrderDish> Orders { get; set; }
     }
 }
