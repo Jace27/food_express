@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:food_express"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="#FFB31736">
+        Title="MainWindow" Height="450" Width="800" Background="#FFFFFFFF">
     <Grid>
-        
+        <Image x:Name="MainImg" />
     </Grid>
 </Window>

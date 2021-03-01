@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Media.Imaging;
 
 namespace food_express.DBEntities
 {
@@ -8,7 +9,7 @@ namespace food_express.DBEntities
         public int Id { get; set; }
         public decimal Cost { get; set; }
         public int CategoryId { get; set; }
-        public string ImageFileName { get; set; }
+        public byte[] Image { get; set; }
 
         public DishCategories Category { get; set; }
         public ICollection<OrderDish> Orders { get; set; }
