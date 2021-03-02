@@ -14,15 +14,9 @@ namespace food_express
         {
             InitializeComponent();
 
-            Functions.LoadImage(MainImg, Environment.CurrentDirectory + "/../../Images/DishCategories/burgers.png");
-            using (MainModel context = new MainModel())
-            {
-                DBEntities.DishCategories newdc = new DBEntities.DishCategories();
-                newdc.Name = "Соусы";
-                newdc.Image = File.ReadAllBytes(Environment.CurrentDirectory + "/../../Images/DishCategories/sauses.png");
-                context.DishesCategories.Add(newdc);
-                context.SaveChanges();
-            }
+            Settings.MainWindow = this;
+            Settings.MainFrame = MainFrame;
+            Functions.Navigate("Main.xaml");
         }
     }
 }

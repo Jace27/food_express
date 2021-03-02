@@ -23,3 +23,5 @@ H:\4 курс\проф мастерство\food_express\obj\Debug\food_express.
 H:\4 курс\проф мастерство\food_express\obj\Debug\GeneratedInternalTypeHelper.g.cs
 H:\4 курс\проф мастерство\food_express\obj\Debug\food_express.Migrations.binarytest.resources
 H:\4 курс\проф мастерство\food_express\obj\Debug\food_express.Migrations.binary.resources
+H:\4 курс\проф мастерство\food_express\obj\Debug\Pages\Main.g.cs
+H:\4 курс\проф мастерство\food_express\obj\Debug\Pages\Main.baml
