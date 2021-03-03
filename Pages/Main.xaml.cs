@@ -51,5 +51,10 @@ namespace food_express.Pages
             };
             Functions.Navigate("Dish");
         }
+
+        private void ButtonCartOpen_Click(object sender, RoutedEventArgs e)
+        {
+            Functions.OpenCart();
+        }
     }
 }

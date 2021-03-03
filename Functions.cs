@@ -15,7 +15,8 @@ namespace food_express
             var Dock = new DockPanel()
             {
                 Margin = new Thickness(10, 10, 10, 10),
-                LastChildFill = true
+                LastChildFill = true,
+                Background = new SolidColorBrush(Colors.White)
             };
             var Border = new Border()
             {
@@ -87,6 +88,10 @@ namespace food_express
             {
                 Settings.MainFrame.Navigate(new Uri("Pages/" + path + ".xaml", UriKind.Relative));
             }
+        }
+        public static void OpenCart()
+        {
+            Navigate("Order");
         }
     }
 }

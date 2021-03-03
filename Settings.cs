@@ -19,5 +19,7 @@ namespace food_express
         public static Frame MainFrame;
 
         public static dynamic[] CurrentPageArguments;
+
+        public static Cart Cart = new Cart();
     }
 }

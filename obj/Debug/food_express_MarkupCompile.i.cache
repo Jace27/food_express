@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 H:\4 курс\проф мастерство\food_express\App.xaml
-31605382898
+6-1236743527
 
-281438117258
+321885340042
 18-1910514854
-MainWindow.xaml;Pages\Dish.xaml;Pages\Main.xaml;
+EditDish.xaml;AddDish.xaml;MainWindow.xaml;Pages\Dish.xaml;Pages\Main.xaml;Pages\Order.xaml;
 
 True
 

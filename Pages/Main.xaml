@@ -15,9 +15,9 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button FontSize="24" Margin="0,10,10,0" Height="40" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" Background="#FFFFBB0E" Grid.Column="0">Ваш заказ</Button>
+        <Button FontSize="24" Margin="0,10,10,0" Height="40" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" Background="#FFFFBB0E" Grid.Column="0" x:Name="ButtonCartOpen" Click="ButtonCartOpen_Click">Ваш заказ</Button>
         <Label FontSize="36" FontWeight="Bold" Margin="10,-10,0,0" HorizontalAlignment="Left" Width="100" Height="55" VerticalAlignment="Top">Меню</Label>
-        <Grid Grid.Row="1" Grid.Column="1" x:Name="GridCategories">
+        <Grid Grid.Row="1" Grid.Column="1" x:Name="GridCategories" Background="#FFDDDDDD">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>

@@ -42,6 +42,7 @@ namespace food_express.Pages
                         foreach (DBEntities.Dish dish in dishes)
                         {
                             UIElement panel = Functions.CreatePanelForGrid(Functions.GetImage(dish.Image), dish.Name);
+                            panel.MouseLeftButtonUp += Panel_MouseLeftButtonUp;
                             GridDishes.Children.Add(panel);
                             UIPanelSize coors = Dishes.Push(panel, dish);
                             if (coors.X > -1 && coors.Y > -1)
@@ -63,12 +64,27 @@ namespace food_express.Pages
             }
         }
 
+        private void Panel_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            UIElement panel = sender as UIElement;
+            int x, y;
+            x = Grid.GetColumn(panel);
+            y = Grid.GetRow(panel);
+            AddDish dialog = new AddDish(Dishes[x, y].DataObject);
+            dialog.ShowDialog();
+        }
+
         private DishCategory CurrentCategory;
         private UIPanelCollection<DBEntities.Dish> Dishes;
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             Functions.Navigate("back");
+        }
+
+        private void ButtonCartOpen_Click(object sender, RoutedEventArgs e)
+        {
+            Functions.OpenCart();
         }
     }
 }
