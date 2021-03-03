@@ -68,6 +68,7 @@ namespace food_express
         }
         public static BitmapImage GetImage(byte[] bi)
         {
+            if (bi == null) return new BitmapImage();
             MemoryStream ms = new MemoryStream(bi);
             BitmapImage i = new BitmapImage();
             i.BeginInit();
@@ -78,7 +79,14 @@ namespace food_express
 
         public static void Navigate(string path)
         {
-            Settings.MainFrame.Navigate(new Uri("Pages/" + path, UriKind.Relative));
+            if (path == "back")
+            {
+                Settings.MainFrame.GoBack();
+            }
+            else
+            {
+                Settings.MainFrame.Navigate(new Uri("Pages/" + path + ".xaml", UriKind.Relative));
+            }
         }
     }
 }

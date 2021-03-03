@@ -9,39 +9,47 @@ using System.Windows.Media.Imaging;
 
 namespace food_express.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для Main.xaml
-    /// </summary>
     public partial class Main : Page
     {
+        public UIPanelCollection<DBEntities.DishCategory> DishCategories;
+
         public Main()
         {
             InitializeComponent();
+
+            DishCategories = new UIPanelCollection<DBEntities.DishCategory>(GridCategories.ColumnDefinitions.Count, GridCategories.RowDefinitions.Count);
             using (MainModel context = new MainModel())
             {
-                int x = 0, y = 0;
                 foreach(var cat in context.DishesCategories)
                 {
                     UIElement Panel = Functions.CreatePanelForGrid(Functions.GetImage(cat.Image), cat.Name);
-                    Panel.MouseLeftButtonUp += DockPanel_MouseLeftButtonUp;
+                    Panel.MouseLeftButtonUp += Panel_MouseLeftButtonUp;
                     GridCategories.Children.Add(Panel);
-                    Grid.SetColumn(Panel, x);
-                    Grid.SetRow(Panel, y);
-                    x++;
-                    if (x == GridCategories.ColumnDefinitions.Count)
+                    UIPanelSize coors = DishCategories.Push(Panel, cat);
+                    if (coors.X > -1 && coors.Y > -1)
                     {
-                        x = 0;
-                        y++;
-                        if (y == GridCategories.RowDefinitions.Count)
-                            break;
+                        Grid.SetColumn(DishCategories[coors].Element, coors.X);
+                        Grid.SetRow(DishCategories[coors].Element, coors.Y);
+                    } 
+                    else
+                    {
+                        break;
                     }
                 }
             }
         }
 
-        private void DockPanel_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void Panel_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-
+            UIElement elem = sender as UIElement;
+            int x, y;
+            x = Grid.GetColumn(elem);
+            y = Grid.GetRow(elem);
+            Settings.CurrentPageArguments = new dynamic[]
+            {
+                DishCategories[x, y].DataObject
+            };
+            Functions.Navigate("Dish");
         }
     }
 }

@@ -17,5 +17,7 @@ namespace food_express
 
         public static MainWindow MainWindow;
         public static Frame MainFrame;
+
+        public static dynamic[] CurrentPageArguments;
     }
 }

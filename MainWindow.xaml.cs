@@ -16,7 +16,7 @@ namespace food_express
 
             Settings.MainWindow = this;
             Settings.MainFrame = MainFrame;
-            Functions.Navigate("Main.xaml");
+            Functions.Navigate("Main");
         }
     }
 }

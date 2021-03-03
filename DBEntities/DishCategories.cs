@@ -5,7 +5,7 @@ using System.Windows.Media.Imaging;
 
 namespace food_express.DBEntities
 {
-    public class DishCategories
+    public class DishCategory
     {
         public int Id { get; set; }
         public string Name { get; set; }

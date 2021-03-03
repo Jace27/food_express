@@ -85,11 +85,19 @@
     <Compile Include="Migrations\202103010732494_binary.Designer.cs">
       <DependentUpon>202103010732494_binary.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103030425416_dish-name.cs" />
+    <Compile Include="Migrations\202103030425416_dish-name.Designer.cs">
+      <DependentUpon>202103030425416_dish-name.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Pages\Dish.xaml.cs">
+      <DependentUpon>Dish.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Main.xaml.cs">
       <DependentUpon>Main.xaml</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="UIPanelCollection.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -102,6 +110,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Dish.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Main.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,6 +142,9 @@
     <EmbeddedResource Include="Migrations\202103010732494_binary.resx">
       <DependentUpon>202103010732494_binary.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103030425416_dish-name.resx">
+      <DependentUpon>202103030425416_dish-name.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -144,19 +159,24 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\DishCategories\burgers.png" />
+    <Resource Include="Images\DishCategories\Burgers\CategoryMain.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\DishCategories\french_fries.png" />
+    <Resource Include="Images\DishCategories\FrenchFries\CategoryMain.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\DishCategories\drinks.png" />
+    <Resource Include="Images\DishCategories\Drinks\CategoryMain.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\DishCategories\shrimp_rolls.png" />
+    <Resource Include="Images\DishCategories\Rolls\CategoryMain.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\DishCategories\sauses.png" />
+    <Resource Include="Images\DishCategories\Sauses\CategoryMain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DishCategories\Burgers\bigmacdouble.png" />
+    <Resource Include="Images\DishCategories\Burgers\doubletasty.png" />
+    <Resource Include="Images\DishCategories\Burgers\triplecheeseburger.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
