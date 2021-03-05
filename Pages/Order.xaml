@@ -15,7 +15,8 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button FontSize="24" Margin="0,10,10,0" Height="40" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" Background="#FFDDDDDD" Grid.Column="0" x:Name="BtnBack" Click="BtnBack_Click">Назад</Button>
+        <Button FontSize="24" Margin="0,10,10,0" Height="40" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" Background="#FFFFBB0E" Grid.Column="0" x:Name="BtnOrder" Click="BtnOrder_Click">Заказать</Button>
+        <Button FontSize="24" Margin="0,10,135,0" Height="40" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" Background="#FFDDDDDD" Grid.Column="0" x:Name="BtnBack" Click="BtnBack_Click">Назад</Button>
         <Label FontSize="36" FontWeight="Bold" Margin="10,-10,0,0" HorizontalAlignment="Left" Width="525" Height="55" VerticalAlignment="Top" x:Name="CartLabel">Корзина</Label>
         <Grid Grid.Row="1" Grid.Column="1" x:Name="GridDishes" Background="#FFDDDDDD">
             <Grid.ColumnDefinitions>

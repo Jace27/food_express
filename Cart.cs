@@ -39,7 +39,8 @@ namespace food_express
             set 
             {
                 if (i >= Count) Count = i + 1;
-                Items[i] = value; 
+                Items[i] = value;
+                CartChanged?.Invoke();
             }
         }
         public void Push(DBEntities.Dish dish, int count)
@@ -57,13 +58,71 @@ namespace food_express
                 Dish = dish,
                 Count = count
             };
+            CartChanged?.Invoke();
         }
+        public void EditItem(DBEntities.Dish dish, int count)
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                if (this[i].Dish.Id == dish.Id)
+                {
+                    this[i].Count = count;
+                    this[i].Dish = dish;
+                    return;
+                }
+            }
+            Push(dish, 1);
+        }
+        public int GetCount(DBEntities.Dish dish)
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                if (this[i].Dish.Id == dish.Id)
+                {
+                    return this[i].Count;
+                }
+            }
+            return 0;
+        }
+        public CartItem Find(DBEntities.Dish dish)
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                if (this[i].Dish.Id == dish.Id)
+                {
+                    return this[i];
+                }
+            }
+            return null;
+        }
+        public void Remove(DBEntities.Dish dish)
+        {
+            Remove(dish.Id);
+        }
+        public void Remove(int id)
+        {
+            bool move = false;
+            for(int i = 0; i < Count; i++)
+            {
+                if (this[i].Dish.Id == id) move = true;
+                if (move && i != Count - 1)
+                {
+                    this[i] = this[i + 1];
+                }
+            }
+            if (move) Count--;
+            CartChanged?.Invoke();
+        }
+
         public Cart Clone()
         {
             Cart ret = MemberwiseClone() as Cart;
             ret.Items = _items;
             return ret;
         }
+
+        public delegate void CartChangedDelegate();
+        public event CartChangedDelegate CartChanged;
     }
     public class CartItem
     {

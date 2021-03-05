@@ -8,16 +8,16 @@ namespace food_express
 {
     public partial class EditDish : Window
     {
-        public EditDish(DBEntities.Dish dish)
+        public EditDish(CartItem dish)
         {
             InitializeComponent();
 
             if (dish != null)
             {
-                CurrentDish = dish;
-                LabelDishName.Content = "Добавить к заказу блюдо " + CurrentDish.Name + "?";
+                CurrentDish = dish.Dish;
+                LabelDishName.Content = "Блюдо " + CurrentDish.Name + "?";
                 LabelDishCost.Content = "Цена: " + CurrentDish.Cost + "руб.";
-                TextBoxDishCount.Text = "1";
+                TextBoxDishCount.Text = dish.Count.ToString();
             } 
             else
             {
@@ -56,9 +56,15 @@ namespace food_express
             Close();
         }
 
+        private void RemoveDish_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Cart.Remove(CurrentDish);
+            Close();
+        }
+
         private void DialogResultConfirm_Click(object sender, RoutedEventArgs e)
         {
-            Settings.Cart.Push(CurrentDish, Convert.ToInt32(TextBoxDishCount.Text));
+            Settings.Cart.EditItem(CurrentDish, Convert.ToInt32(TextBoxDishCount.Text));
             Close();
         }
     }

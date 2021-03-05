@@ -96,6 +96,10 @@
     <Compile Include="Migrations\202103030425416_dish-name.Designer.cs">
       <DependentUpon>202103030425416_dish-name.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103050934120_order-statuses.cs" />
+    <Compile Include="Migrations\202103050934120_order-statuses.Designer.cs">
+      <DependentUpon>202103050934120_order-statuses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pages\Dish.xaml.cs">
       <DependentUpon>Dish.xaml</DependentUpon>
@@ -166,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103030425416_dish-name.resx">
       <DependentUpon>202103030425416_dish-name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103050934120_order-statuses.resx">
+      <DependentUpon>202103050934120_order-statuses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
