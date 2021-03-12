@@ -15,7 +15,7 @@ namespace food_express
         public DbSet<DishCategory> DishesCategories { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderStatus> OrderStatuses { get; set; }
-        public DbSet<OrderDish> OrderDish { get; set; }
+        public DbSet<OrderDish> OrderDishes { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserRole> UsersRoles { get; set; }
 

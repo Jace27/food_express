@@ -10,6 +10,27 @@ namespace food_express
 {
     public static class Functions
     {
+        public static string GenerateOrderNumber(int order_id)
+        {
+            char[] chars = new char[] {
+                'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 
+                'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
+                'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+            };
+            char[] code = new char[3];
+            Random rand = new Random(1);
+            int num = (order_id % (int)Math.Round(Math.Pow(chars.Length, 3))) * chars.Length;
+            for (int i = 0; i < code.Length; i++)
+            {
+                num = num / chars.Length;
+                int c = num % chars.Length;
+                code[i] = chars[c];
+            }
+            return new string(code);
+        }
+
         public static UIElement CreatePanelForGrid(BitmapImage bi, string label)
         {
             var Dock = new DockPanel()

@@ -81,20 +81,23 @@ namespace food_express.Pages
                 DBEntities.Order order = context.Orders.Create();
                 order.DateTime = DateTime.Now;
                 order.Status = context.OrderStatuses.Where(s => s.Name == "Готовится").ToArray()[0];
-                order.Dishes = context.OrderDish.ToList();
+                order.Dishes = context.OrderDishes.ToList();
+                order.Number = "   ";
                 for (int i = 0; i < Cart.Count; i++)
                 {
                     DBEntities.OrderDish link = new DBEntities.OrderDish()
                     {
                         Dish = Cart[i].Dish,
-                        Count = Convert.ToUInt32(Cart[i].Count),
+                        Count = Cart[i].Count,
                         Order = order
                     };
                     order.Dishes.Add(link);
                 }
                 context.Orders.Add(order);
                 context.SaveChanges();
-                MessageBox.Show("Спасибо за заказ, мы уже начали его готовить. Номер заказа " + order.Id, "Заказ", MessageBoxButton.OK, MessageBoxImage.Information);
+                order.Number = Functions.GenerateOrderNumber(order.Id);
+                context.SaveChanges();
+                MessageBox.Show("Спасибо за заказ, мы уже начали его готовить. Номер заказа " + order.Number, "Заказ", MessageBoxButton.OK, MessageBoxImage.Information);
                 Functions.Navigate("back");
             }
         }

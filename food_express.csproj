@@ -100,6 +100,14 @@
     <Compile Include="Migrations\202103050934120_order-statuses.Designer.cs">
       <DependentUpon>202103050934120_order-statuses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103110646187_order-dish-count.cs" />
+    <Compile Include="Migrations\202103110646187_order-dish-count.Designer.cs">
+      <DependentUpon>202103110646187_order-dish-count.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103110657476_order-number.cs" />
+    <Compile Include="Migrations\202103110657476_order-number.Designer.cs">
+      <DependentUpon>202103110657476_order-number.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pages\Dish.xaml.cs">
       <DependentUpon>Dish.xaml</DependentUpon>
@@ -173,6 +181,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103050934120_order-statuses.resx">
       <DependentUpon>202103050934120_order-statuses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103110646187_order-dish-count.resx">
+      <DependentUpon>202103110646187_order-dish-count.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103110657476_order-number.resx">
+      <DependentUpon>202103110657476_order-number.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

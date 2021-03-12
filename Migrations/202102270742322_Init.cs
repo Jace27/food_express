@@ -31,7 +31,7 @@ namespace food_express.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.OrderDish",
+                "dbo.OrderDishes",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),

@@ -35,3 +35,5 @@ H:\4 курс\проф мастерство\food_express\obj\Debug\Pages\Order.b
 H:\4 курс\проф мастерство\food_express\obj\Debug\EditDish.g.cs
 H:\4 курс\проф мастерство\food_express\obj\Debug\EditDish.baml
 H:\4 курс\проф мастерство\food_express\obj\Debug\food_express.Migrations.orderstatuses.resources
+H:\4 курс\проф мастерство\food_express\obj\Debug\food_express.Migrations.orderdishcount.resources
+H:\4 курс\проф мастерство\food_express\obj\Debug\food_express.Migrations.ordernumber.resources
